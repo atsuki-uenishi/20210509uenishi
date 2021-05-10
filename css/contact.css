@@ -1,0 +1,285 @@
+body {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.val-width {
+    width: 80%;
+}
+
+
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    height: 70px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.header-logo {
+    width: 80px;
+    margin: 20px 30px;
+}
+
+
+.menu {
+    display: inline-block;
+    width: 45px;
+    height: 36px;
+    cursor: pointer;
+    position: relative;
+    right: 30px;
+}
+
+.menu_line--top,
+.menu_line--middle,
+.menu_line--bottom {
+    display: inline-block;
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.menu_line--top {
+    top: 0;
+}
+
+.menu_line--middle {
+    top: 15px;
+}
+
+.menu_line--bottom {
+    bottom: 0;
+}
+
+.menu.open span:nth-of-type(1) {
+    top: 14px;
+    transform: rotate(45deg);
+}
+
+.menu.open span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menu.open span:nth-of-type(3) {
+    top: 14px;
+    transform: rotate(-45deg);
+}
+
+.in {
+    transform: translateX(100%);
+}
+
+
+.nav-list_item a {
+    color: blue;
+}
+
+.nav {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    transition: .7s;
+    text-align: center;
+    background-color: #fff;
+}
+
+.nav-list {
+    padding: 80px;
+}
+
+.nav-list_item {
+    list-style: none;
+    margin-top: 50px;
+}
+
+
+/* トップビュー */
+
+.topview {
+    width: 100%;
+    height: 30vh;
+    background: url(../img/mv.png) center / cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topview_text {
+    text-align: center;
+}
+
+.topview_text h1 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+/* メイン */
+
+.contact {
+    margin: 80px auto 0;
+}
+
+.contact-form_item {
+    margin-top: 25px;
+}
+
+.contact-form_item-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.contact-form_item-textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-top: 5px;
+    resize: none;
+    padding: 5px;
+}
+
+.contact-form_btn {
+    margin: 25px auto 0;
+    width: 300px;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+input:focus {
+    outline: 2px solid #000;
+}
+
+textarea:focus{
+    outline: 2px solid #000;
+}
+
+.contact-form_item-label-required {
+    color: red;
+    margin-left: 3px;
+    font-size: 1.1rem;
+}
+
+
+/* フッター */
+
+.footer {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #222;
+}
+
+.footer_copy small {
+    color: #fff;
+}
+
+.footer_menu-list {
+    list-style: none;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.footer_menu-list_item:not(:first-child) {
+    margin-top: 20px;
+}
+
+.footer_menu-list_item a {
+    color: #fff;
+    font-size: .8rem;
+}
+
+.footer_menu-list_item a:hover {
+    opacity: .7;
+}
+
+/* メディアクエリ */
+
+@media screen and (min-width: 769px){
+
+    .val-width {
+        width: 1000px;
+    }
+
+    /* ヘッダー */
+
+    .nav-list_item a {
+        color: #000;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .nav {
+        background-color: #fff;
+        position: static;
+        left: initial;
+        height: initial;
+        width: initial;
+    }
+
+
+    .nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0 0;
+    margin: 20px 0;
+    right: 20px;
+    }
+
+    .nav-list_item {
+    margin-right: 20px;
+    margin-top: 0;
+    }
+
+    .in {
+        transform: initial;
+    }
+
+
+    /* メイン */
+
+    .contact {
+        width: 700px;
+    }
+
+
+    /* フッター */
+
+    .footer_menu-list {
+        display: flex;
+        padding: 20px 0;
+    }
+
+    .footer_menu-list_item:not(:last-child) {
+        border-right: 1px solid #fff;
+        margin-right: 12px;
+        padding-right: 12px;
+    }
+
+    .footer_menu-list_item:not(:first-child) {
+        margin-top: 0px;
+    }
+
+}
